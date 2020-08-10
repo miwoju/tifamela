@@ -54,7 +54,7 @@ const LearnMoreWrapper = styled.div`
         font-size: 3rem;
         color: ${(props) => props.theme.color.primary};
         padding: 25px;
-        animation: 1s ease-in 0s infinite alternate heartbeat;
+        animation: 0.9s ease-in 0s infinite alternate heartbeat;
         &:hover {
             color: ${(props) => props.theme.color.tertiary};
         }
