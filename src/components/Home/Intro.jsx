@@ -41,10 +41,10 @@ const LearnMoreWrapper = styled.div`
     transform: translateX(-50%);
     text-align: center;
     -webkit-tap-highlight-color: transparent;
-
     p {
         font-size: 1.4rem;
         margin-bottom: -25px;
+        font-weight: 500;
         @media ${device.mobile} {
             font-size: 1.5rem;
         }

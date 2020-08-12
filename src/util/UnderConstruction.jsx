@@ -10,6 +10,7 @@ const StyledUnderConstruction = styled.div`
     flex-direction: column;
     background-color: ${(props) => props.theme.color.quaternary};
     text-align: center;
+    padding: 0 10px;
     .header {
         position: relative;
         font-size: 4rem;

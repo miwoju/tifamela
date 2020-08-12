@@ -111,6 +111,7 @@ const StyledContact = styled.section`
             @media ${device.desktop} {
                 font-size: 1.4rem;
                 padding: 10px;
+                margin-bottom: 5px;
             }
         }
     }

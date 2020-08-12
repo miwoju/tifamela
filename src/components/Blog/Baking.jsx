@@ -98,7 +98,7 @@ const Recipe = styled.ul`
         }
     }
     list-style-type: none;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 `;
 
 const StyledNumber = styled.span`
@@ -116,7 +116,7 @@ const StyledNumber = styled.span`
 
 const Directions = styled.ol`
     list-style-type: none;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 `;
 
 const Thoughts = styled.h5`
@@ -141,6 +141,16 @@ const Thoughts = styled.h5`
         bottom: 0;
         right: 0;
         margin-right: 30px;
+    }
+
+    @media ${device.phone} {
+        padding: 15px;
+        .fa-quote-left {
+            margin-left: -5px;
+        }
+        .fa-quote-right {
+            margin-right: -5px;
+        }
     }
 `;
 

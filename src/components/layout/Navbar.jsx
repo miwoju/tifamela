@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavHashLink as NavLink } from "react-router-hash-link";
 import Logo from "../../assets/Logo";
-import { twitch as hrefTwitch } from "../../assets/social-info.json";
+// import { twitch as hrefTwitch } from "../../assets/social-info.json";
 import device from "../../util/device";
 
 const StyledNavbar = styled.nav`
@@ -17,6 +17,9 @@ const StyledNavbar = styled.nav`
             .link {
                 color: #fff;
             }
+            /* .highlight {
+                color: ${(props) => props.theme.color.tertiary};
+            } */
         }
     }
 `;

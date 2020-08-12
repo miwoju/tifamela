@@ -6,8 +6,8 @@ import {
     instagram as hrefInstagram,
     youtube as hrefYoutube,
     tiktok as hrefTiktok,
-    snapchat as hrefSnapchat,
-    paypal as hrefPaypal,
+    // snapchat as hrefSnapchat,
+    // paypal as hrefPaypal,
 } from "../../assets/social-info.json";
 import device from "../../util/device";
 
