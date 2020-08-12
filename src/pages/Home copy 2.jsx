@@ -6,8 +6,8 @@ const StyledHome = styled.div`
     width: 100%;
 `;
 
-const HomeCopy = (props) => {
+const Home = (props) => {
     return <StyledHome></StyledHome>;
 };
 
-export default HomeCopy;
+export default Home;

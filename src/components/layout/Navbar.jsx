@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavHashLink as NavLink } from "react-router-hash-link";
 import Logo from "../../assets/Logo";
 import { twitch as hrefTwitch } from "../../assets/social-info.json";
 import device from "../../util/device";
-import { useState } from "react";
 
 const StyledNavbar = styled.nav`
     .scrolled-nav {
@@ -42,6 +41,7 @@ const NavItems = styled.ul`
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     grid-column: 3/4;
     .hamburger-opened {
         .line {
@@ -64,7 +64,7 @@ const NavItems = styled.ul`
 const NavItem = styled.li`
     font-size: 1.8rem;
     border: 1px solid transparent;
-    padding: 0 7px;
+    padding: 7px;
     transition: all 0.1s ease-in-out;
     color: black;
     white-space: nowrap;
@@ -117,7 +117,8 @@ const ExpandedMenu = styled.div`
     }
 `;
 
-const Navbar = ({ scrollHeight }) => {
+const Navbar = (props) => {
+    // const Navbar = ({ scrollHeight }) => {
     const [menuToggle, setMenuToggle] = useState(false);
     const handleClick = () => {
         setMenuToggle(!menuToggle);
@@ -125,10 +126,17 @@ const Navbar = ({ scrollHeight }) => {
     const handleClose = () => {
         setMenuToggle(false);
     };
+
+    const [scrollHeight, setScrollHeight] = useState();
+    const handleScroll = () => {
+        setScrollHeight(window.pageYOffset);
+    };
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    }, []);
     return (
         <StyledNavbar>
             <Nav className={`${scrollHeight > 50 && "scrolled-nav"}`}>
-                {console.log(menuToggle)}
                 <NavLink smooth className="link" to="/#intro">
                     <Logo />
                 </NavLink>
@@ -154,7 +162,7 @@ const Navbar = ({ scrollHeight }) => {
                             <NavLink
                                 onClick={handleClose}
                                 className="link"
-                                to="/baking"
+                                to="/blog/baking"
                             >
                                 Baking
                             </NavLink>
@@ -162,7 +170,7 @@ const Navbar = ({ scrollHeight }) => {
                             <NavLink
                                 onClick={handleClose}
                                 className="link"
-                                to="/makeup"
+                                to="/blog/makeup"
                             >
                                 Makeup & Skincare
                             </NavLink>
@@ -183,12 +191,12 @@ const Navbar = ({ scrollHeight }) => {
                         </NavLink>
                     </NavItem>
                     <NavItem className="nav-item">
-                        <NavLink className="link" to="/baking">
+                        <NavLink className="link" to="/blog/baking">
                             Baking
                         </NavLink>
                     </NavItem>
                     <NavItem className="nav-item">
-                        <NavLink className="link" to="/makeup">
+                        <NavLink className="link" to="/blog/makeup">
                             Makeup<span className="highlight">/</span>Skincare
                         </NavLink>
                     </NavItem>

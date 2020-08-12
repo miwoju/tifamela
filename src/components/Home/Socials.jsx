@@ -15,7 +15,7 @@ const StyledSocials = styled.div`
     margin-top: 60px;
     text-align: center;
     p {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     i {
         font-size: 3rem;
@@ -26,6 +26,8 @@ const StyledSocials = styled.div`
     .social-links1 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 350px;
+        margin: 0 auto;
         .fa-instagram:hover {
             cursor: pointer;
             color: #fff;

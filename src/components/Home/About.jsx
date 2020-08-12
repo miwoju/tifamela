@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import bg1 from "../../images/bg-1.jpg";
 import profilePic from "../../images/profile-pic.png";
-import { name as myName } from "../../assets/social-info.json";
+import {
+    name as myName,
+    location as myLocation,
+} from "../../assets/social-info.json";
 import device from "../../util/device";
 
 const StyledAbout = styled.section`
@@ -30,7 +33,7 @@ const AboutMe = styled.div`
     width: 65%;
     height: 100%;
     @media ${device.giant} {
-        width: 95%;
+        width: 90%;
     }
     @media ${device.tablet} {
         justify-content: space-evenly;
@@ -135,7 +138,7 @@ const About = (props) => {
             <AboutMe>
                 <Header>
                     <p className="name">about {myFirstName}</p>
-                    <p className="subtext">Made in LA</p>
+                    <p className="subtext">Made in {myLocation}</p>
                 </Header>
                 <ProfilePic />
                 <Content>

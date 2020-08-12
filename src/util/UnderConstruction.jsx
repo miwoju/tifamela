@@ -32,7 +32,7 @@ const UnderConstruction = ({ match }) => {
         window.scrollTo(0, 0);
     }, []);
     //Removes the slash from path name
-    const pageName = match.path.substring(1);
+    const pageName = match.path.split("/")[match.path.split("/").length - 1];
     return (
         <StyledUnderConstruction>
             <p className="header">

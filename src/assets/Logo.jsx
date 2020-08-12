@@ -15,7 +15,7 @@ const StyledLogo = styled.p`
 const Logo = ({ className }) => {
     return (
         <StyledLogo className={className}>
-            Tifa<span className="highlight">mela</span> Blog
+            Tifa<span className="highlight">mela</span>
         </StyledLogo>
     );
 };

@@ -54,36 +54,36 @@ class App extends Component {
         this.state = {
             scrollHeight: 0,
         };
-        this.handleScroll = this.handleScroll.bind(this);
+        // this.handleScroll = this.handleScroll.bind(this);
     }
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
-    }
-    componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-    }
-    handleScroll() {
-        this.setState({
-            scrollHeight: window.pageYOffset,
-        });
-    }
+    // componentDidMount() {
+    //     window.addEventListener("scroll", this.handleScroll);
+    // }
+    // componentWillUnmount() {
+    //     window.removeEventListener("scroll", this.handleScroll);
+    // }
+    // handleScroll() {
+    //     this.setState({
+    //         scrollHeight: window.pageYOffset,
+    //     });
+    // }
     render() {
         const { scrollHeight } = this.state;
         return (
             <ThemeProvider theme={theme}>
                 <StyledApp>
-                    <Router basename="/projects/pink-portfolio">
+                    <Router>
                         <Navbar scrollHeight={scrollHeight} />
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route
                                 exact
-                                path="/baking"
-                                component={UnderConstruction}
+                                path="/blog/baking"
+                                component={Blog}
                             />
                             <Route
                                 exact
-                                path="/makeup"
+                                path="/blog/makeup"
                                 component={UnderConstruction}
                             />
                             <Route exact path="/about" component={Home} />

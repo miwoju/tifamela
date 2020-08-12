@@ -14,9 +14,6 @@ const StyledIntro = styled.section`
     height: 100vh;
     padding: 0 20px;
     padding-bottom: 100px;
-    /* @media ${device.phone} {
-
-    } */
 `;
 
 const Name = styled.p`
@@ -47,14 +44,17 @@ const LearnMoreWrapper = styled.div`
 
     p {
         font-size: 1.4rem;
-        margin-bottom: -20px;
+        margin-bottom: -25px;
+        @media ${device.mobile} {
+            font-size: 1.5rem;
+        }
     }
     i {
         cursor: pointer;
         font-size: 3rem;
         color: ${(props) => props.theme.color.primary};
         padding: 25px;
-        animation: 0.9s ease-in 0s infinite alternate heartbeat;
+        animation: 1.6s ease-in 0s infinite alternate heartbeat;
         &:hover {
             color: ${(props) => props.theme.color.tertiary};
         }
@@ -65,7 +65,7 @@ const LearnMoreWrapper = styled.div`
         }
         to {
             color: #fe8e86;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
     }
 `;
