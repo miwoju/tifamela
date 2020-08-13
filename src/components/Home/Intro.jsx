@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { name as myName } from "../../assets/social-info.json";
+import { name as myName } from "../../assets/social-info";
 import { HashLink as Link } from "react-router-hash-link";
 import device from "../../util/device";
 
@@ -76,12 +76,12 @@ const Intro = (props) => {
             <Name>{myName.toLowerCase()}</Name>
             <Header>who is she?</Header>
             <Content>
-                a streamer who enjoys the company
-                <br /> of her community
+                my name is Melanie &
+                <br />I have a passion for baking, music, and skincare.
             </Content>
             <LearnMoreWrapper>
                 <Link className="link" smooth to="/#about">
-                    <p>click me</p>
+                    <p>click me!</p>
                     <i className="fas fa-heart"></i>
                 </Link>
             </LearnMoreWrapper>

@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import baking from "../../assets/baking.json";
+import baking from "../../assets/baking";
 import device from "../../util/device";
 
 const StyledBaking = styled.div`
-    padding: 0 100px;
+    padding: 0 200px;
     background-color: ${(props) => props.theme.light.bg};
     p {
         font-size: 1.4rem;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     li {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         line-height: 2.8rem;
         margin: 10px 0;
         font-weight: 500;
@@ -19,6 +19,12 @@ const StyledBaking = styled.div`
     }
     .tighten {
         width: 80%;
+    }
+    @media ${device.desktop} {
+        padding: 0 150px;
+        .tighten {
+            width: 100%;
+        }
     }
     @media ${device.tablet} {
         padding: 0 50px;
@@ -47,10 +53,47 @@ const Title = styled.h2`
     text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 `;
 
+const ImgWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 50px;
+    flex-wrap: wrap;
+    img {
+        margin: 10px;
+        width: 500px;
+        height: 400px;
+        object-fit: cover;
+    }
+    @media ${device.giant} {
+        img {
+            width: 450px;
+        }
+    }
+    @media ${device.desktop} {
+        object-fit: contain;
+        justify-content: center;
+        img {
+            width: 600px;
+            height: 100%;
+        }
+    }
+    @media ${device.tablet} {
+        img {
+            width: 450px;
+        }
+    }
+    @media ${device.phone} {
+        img {
+            width: 320px;
+        }
+    }
+`;
+
 const Intro = styled.div`
     margin: 50px auto;
     p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 400;
         /* font-style: italic; */
     }
@@ -70,7 +113,8 @@ const StyledCheckbox = styled.div`
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        color: ${(props) => props.theme.text.dark};
+        /* color: ${(props) => props.theme.text.dark}; */
+        color: #fff;
     }
 `;
 
@@ -79,6 +123,10 @@ const Recipe = styled.ul`
         display: flex;
         align-items: center;
         cursor: pointer;
+        width: 500px;
+        @media ${device.tablet} {
+            width: 100%;
+        }
         &:hover ${StyledCheckbox} {
             background-color: ${(props) => props.theme.color.secondary};
         }
@@ -181,39 +229,46 @@ const Baking = (props) => {
                 ) => (
                     <RecipeWrapper key={index}>
                         <Title>{title}</Title>
-                        {/* {images.map((image) => (
-                            <img src={image} alt="food" />
-                        ))} */}
+                        {images && (
+                            <ImgWrapper>
+                                {images.map((image) => (
+                                    <img src={image} alt="food" />
+                                ))}
+                            </ImgWrapper>
+                        )}
                         <Intro className="tighten">
-                            {intro.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
+                            {intro &&
+                                intro.map((item, index) => (
+                                    <p key={index}>{item}</p>
+                                ))}
                         </Intro>
-                        <Header>Ingredients</Header>
+                        <Header>What You'll Need</Header>
                         <Recipe className="tighten">
-                            {recipe.map((item, index) => (
-                                <li
-                                    className={`${
-                                        selected[item] && "selected"
-                                    }`}
-                                    onClick={() => handleSelect(item)}
-                                    key={index}
-                                >
-                                    <StyledCheckbox>
-                                        <i className="fas fa-check"></i>
-                                    </StyledCheckbox>
-                                    {item}
-                                </li>
-                            ))}
+                            {recipe &&
+                                recipe.map((item, index) => (
+                                    <li
+                                        className={`${
+                                            selected[item] && "selected"
+                                        }`}
+                                        onClick={() => handleSelect(item)}
+                                        key={index}
+                                    >
+                                        <StyledCheckbox>
+                                            <i className="fas fa-check"></i>
+                                        </StyledCheckbox>
+                                        {item}
+                                    </li>
+                                ))}
                         </Recipe>
-                        <Header>Directions</Header>
+                        <Header>How To Make It</Header>
                         <Directions className="tighten">
-                            {directions.map((item, index) => (
-                                <li key={index}>
-                                    <StyledNumber>{index + 1}</StyledNumber>
-                                    {item}
-                                </li>
-                            ))}
+                            {directions &&
+                                directions.map((item, index) => (
+                                    <li key={index}>
+                                        <StyledNumber>{index + 1}</StyledNumber>
+                                        {item}
+                                    </li>
+                                ))}
                         </Directions>
                         <Header>My Thoughts</Header>
                         <Thoughts>

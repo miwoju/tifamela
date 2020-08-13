@@ -8,7 +8,7 @@ import {
     tiktok as hrefTiktok,
     // snapchat as hrefSnapchat,
     // paypal as hrefPaypal,
-} from "../../assets/social-info.json";
+} from "../../assets/social-info";
 import device from "../../util/device";
 
 const StyledSocials = styled.div`
@@ -115,11 +115,11 @@ const Socials = () => {
             <div className="social-links2">
                 <div className="snapchat">
                     <i className="fab fa-snapchat-ghost"></i>
-                    <p>tifamela</p>
+                    {/* <p>tifamela</p> */}
                 </div>
                 <div className="paypal">
                     <i className="fab fa-paypal"></i>
-                    <p>tifamel4@gmail.com</p>
+                    {/* <p>tifamel4@gmail.com</p> */}
                 </div>
             </div>
         </StyledSocials>

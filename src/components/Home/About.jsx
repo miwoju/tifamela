@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import bg1 from "../../images/bg-1.jpg";
-import profilePic from "../../images/profile-pic.png";
+// import bg2 from "../../images/bg-2.jpg";
+// import profilePic from "../../images/profile-pic1.png";
+import profilePic2 from "../../images/profile-pic2.jpg";
+// import profilePic3 from "../../images/profile-pic3.jpg";
 import {
     name as myName,
     location as myLocation,
-} from "../../assets/social-info.json";
+} from "../../assets/social-info";
 import device from "../../util/device";
 
 const StyledAbout = styled.section`
@@ -14,7 +17,7 @@ const StyledAbout = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
         url(${bg1}) center no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -78,7 +81,8 @@ const Header = styled.div`
 `;
 
 const ProfilePic = styled.div`
-    background: url(${profilePic}) center top no-repeat;
+    background: url(${profilePic2}) center top no-repeat;
+    /* background: url("https://firebasestorage.googleapis.com/v0/b/tifamela-702fc.appspot.com/o/profile-pic2.jpg?alt=media&token=f6e1e361-1eb8-4841-b9fa-f3ef0610673f") center top no-repeat; */
     background-size: cover;
     position: absolute;
     top: 10%;
@@ -112,7 +116,7 @@ const Content = styled.div`
     padding: 0 20px;
     /* min-width: 400px; */
     p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin: 15px 0;
         text-align: justify;
     }
@@ -131,6 +135,11 @@ const Content = styled.div`
         }
     }
 `;
+
+const Bold = styled.span`
+    font-weight: 600;
+`;
+
 const About = (props) => {
     const myFirstName = myName.split(" ")[0].toLowerCase();
     return (
@@ -142,24 +151,27 @@ const About = (props) => {
                 </Header>
                 <ProfilePic />
                 <Content>
-                    <p>My name is Melanie.</p>
                     <p>
-                        ​What I enjoy the most is listening to music while
-                        baking cute treats! I love to learn new recipes and
-                        review them.
+                        My name is <Bold>Melanie.</Bold>
                     </p>
                     <p>
-                        My blog expresses my passion on baking, music, and
-                        skincare. I enjoyed writing when I was in high school
-                        and continued writing in college in my journalism
-                        classes. Writing was always a passion of mine and this
-                        blog will help guide me to write about my hobbies. I'm
-                        always fastinated and interested in trying new things,
-                        talking about them, and giving my honest opinions.
+                        ​What I enjoy the most is <Bold>listening</Bold> to
+                        music while baking cute treats! I love to learn new
+                        recipes and review them.
                     </p>
                     <p>
-                        Hope you enjoy your stay here and learn something new
-                        from my blog!
+                        My blog expresses my <Bold>passion</Bold> on baking,
+                        music, and skincare. I enjoyed writing when I was in
+                        high school and continued writing in college in my
+                        journalism classes. <Bold>Writing</Bold> was always a
+                        passion of mine and this blog will help guide me to
+                        write about my hobbies. I'm always fastinated and
+                        <Bold> interested</Bold> in trying new things, talking
+                        about them, and giving my <Bold>honest</Bold> opinions.
+                    </p>
+                    <p>
+                        Hope you <Bold>enjoy</Bold> your stay here and learn
+                        something new from my blog!
                     </p>
                 </Content>
             </AboutMe>

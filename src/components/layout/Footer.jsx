@@ -57,7 +57,7 @@ const HomeCopy = (props) => {
                 </p>
             </div>
             <p className="copyright">
-                © Copyright 2020 | Developed & Designed by Richard D. Shin
+                © Copyright 2020 | Coded & Designed by Miwoju
             </p>
         </StyledHome>
     );

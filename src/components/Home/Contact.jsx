@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Socials from "./Socials";
-import { email as myEmail } from "../../assets/social-info.json";
+import { email as myEmail } from "../../assets/social-info";
 import device from "../../util/device";
 
 const StyledContact = styled.section`
